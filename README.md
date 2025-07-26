@@ -150,7 +150,7 @@ If you use this codebase, datasets, or experiments in your research, please cite
   journal={arXiv preprint arXiv:2507.17542},
   year={2025}
 }
-
+```
 ---
 
 ### Acknowledgment 
