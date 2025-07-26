@@ -1,0 +1,37 @@
+[project]
+name = "AssertFlip"
+description = "LLM-powered bug reproduction tool"
+version = "0.10"
+classifiers = [
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS :: MacOS X"
+]
+requires-python = ">=3.10"
+dependencies = [
+    "asyncio",
+    "openai",
+    "tiktoken",
+    "aiolimiter",
+    "tqdm",
+    "slipcover>=1.0.13",
+    "pytest-cleanslate>=1.0.6", # 1.0.6 fixes collection error bug
+    "pytest-repeat",
+    "litellm==1.73.1"
+]
+
+[build-system]
+requires = [
+    "setuptools>61",
+    "wheel",
+    "tomli; python_version < '3.11'" # tomllib alternative
+]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+assertflip = "assertFlip.assertFlip:main"
+
