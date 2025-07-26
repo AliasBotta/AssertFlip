@@ -89,21 +89,18 @@ Then run:
 ```bash
 python scripts/run_parallel.py
 ```
----
 
 ### 6. Running No Validation Ablation
 
 ```bash
 python scripts/run_parallel_without_validation_ablation.py
 ```
----
 
 ### 7. Running No Planner Ablation
 
 ```bash
 python scripts/run_parallel_without_planner_ablation.py
 ```
----
 
 ### 8. Perfect Localization
 
@@ -142,8 +139,23 @@ We also provide:
 - Full results after evaluating on SWT-Bench for each reported run in evaluation_results_on_SWT_Bench/
 
 ---
+## 📚 Citation
+
+If you use this codebase, datasets, or experiments in your research, please cite our paper:
+
+```bibtex
+@article{khatib2025assertflip,
+  title={AssertFlip: Reproducing Bugs via Inversion of LLM-Generated Passing Tests},
+  author={Khatib, Lara and Mathews, Noble Saji and Nagappan, Meiyappan},
+  journal={arXiv preprint arXiv:2507.17542},
+  year={2025}
+}
+
+---
 
 ### Acknowledgment 
 
 This project uses components from the opensource test generator [Coverup](https://github.com/plasma-umass/coverup), licensed under the Apache 2.0 License. 
+
+
 
