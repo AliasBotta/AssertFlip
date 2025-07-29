@@ -2,7 +2,7 @@
 
 This is the official replication package for our paper:
 
-> **AssertFlip: Reproducing Bugs via Inversion of LLM-Generated Passing Tests**
+> [AssertFlip: Reproducing Bugs via Inversion of LLM-Generated Passing Tests](https://arxiv.org/pdf/2507.17542)
 
 AssertFlip is a system for automatically generating bug-reproducing tests from natural language reports
 
@@ -21,7 +21,6 @@ Install dependencies:
 ```bash
 pip install -e .
 ```
----
 
 ### 2. Add LLM API Credentials
 
@@ -34,7 +33,6 @@ AZURE_API_KEY=your_azure_api_key
 AZURE_API_BASE=https://your_azure_endpoint
 AZURE_API_VERSION=2024-05-01-preview
 ```
----
 
 ### 3. How to Run
 
@@ -53,8 +51,6 @@ This uses:
 - Planner enables
 
 **Config is controlled in scripts/config.py.**
-
----
 
 ### 4. Datasets
 
