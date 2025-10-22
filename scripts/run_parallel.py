@@ -52,7 +52,9 @@ repo_directories = {
     'sphinx': {'source_dir': 'sphinx', 'tests_dir': 'tests'},
     'sympy': {'source_dir': 'sympy', 'tests_dir': 'sympy/testing'},
     'astropy': {'source_dir': 'astropy', 'tests_dir': 'astropy/tests'},
-    'xarray': {'source_dir': 'xarray', 'tests_dir': 'xarray/tests'}
+    'xarray': {'source_dir': 'xarray', 'tests_dir': 'xarray/tests'},
+    'impacket': {'source_dir': 'impacket', 'tests_dir': 'impacket/tests'}
+
 }
 
 NON_TEST_EXTS = [

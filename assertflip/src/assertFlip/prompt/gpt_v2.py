@@ -2,7 +2,10 @@ import typing as T
 from .prompter import *
 import assertFlip.codeinfo as codeinfo
 import os
-from rep_package.assertflip.src.assertFlip.assertFlip import llm
+try:
+    from rep_package.assertflip.src.assertFlip.assertFlip import llm
+except ModuleNotFoundError:
+    from assertFlip import llm
 from pathlib import Path
 
 class GptV2Prompter(Prompter):

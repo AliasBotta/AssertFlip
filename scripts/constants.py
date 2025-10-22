@@ -707,6 +707,16 @@ SPECS_SYMPY.update(
     }
 )
 
+SPECS_IMPACKET = {
+    "0.12.0": {
+        "python": "3.9",
+        "install": "python -m pip install -e .",
+        "pip_packages": ["pytest"],
+        "test_cmd": "pytest -v tests/",
+    }
+}
+
+
 SPECS_PYLINT = {
     k: {
         "python": "3.9",
@@ -994,6 +1004,8 @@ MAP_REPO_VERSION_TO_SPECS_PY = {
     "sqlfluff/sqlfluff": SPECS_SQLFLUFF,
     "swe-bench/humaneval": SPECS_HUMANEVAL,
     "sympy/sympy": SPECS_SYMPY,
+    "fortra/impacket": SPECS_IMPACKET,
+
 }
 
 # Constants - Repository Specific Installation Instructions
