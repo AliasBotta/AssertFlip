@@ -1,0 +1,27 @@
+[
+  {
+    "instance_id": "impacket_issue_1819",
+    "repo": "fortra/impacket",
+    "base_commit": "ea27e8b2dfedf57370d2f65c5053a2b8eeb8ca9d",
+    "problem_statement": "When decoding IPv6 packets in ImpactPacket.load_header, Impacket v0.12.0 raised 'TypeError: can't concat str to bytes'. The function attempted to pad the packet buffer (aBuffer) with the string '\\x00' when the buffer was shorter than the 40-byte IPv6 header length. Because aBuffer is a bytes object, concatenating a string caused a runtime TypeError. The correct fix is to use b'\\x00' so that padding uses bytes instead of strings.",
+    "patch": "diff --git a/impacket/ImpactPacket.py b/impacket/ImpactPacket.py\nindex 79f3f4f0..9d539177 100644\n--- a/impacket/ImpactPacket.py\n+++ b/impacket/ImpactPacket.py\n@@ -432,7 +432,7 @@ class Header(PacketBuffer,ProtocolLayer):\n         if(len(aBuffer) < hdr_len):         #we must do something like this\n             diff = hdr_len - len(aBuffer)\n             for i in range(0, diff):\n-                aBuffer += '\\x00'\n+                aBuffer += b'\\x00'\n         self.set_bytes_from_string(aBuffer[:hdr_len])\n \n     def get_header_size(self):\n",
+    "test_patch": "",
+    "hints_text": "User zmw12306 noted that aBuffer is bytes and must be padded with b'\\x00' not '\\x00'. The issue was confirmed by maintainer alexisbalbachan and fixed in PR #1851.",
+    "created_at": "2024-09-27T20:38:05Z",
+    "version": "0.12.0",
+    "environment_setup_commit": "db53482d",
+    "test_context": "",
+    "localized_code": "impacket/ImpactPacket.py, function load_header",
+    "line_level_localization": [
+      {
+        "filename": "impacket/ImpactPacket.py",
+        "suspect_lines": [432, 433, 434, 435, 436, 437, 438]
+      }
+    ],
+    "FAIL_TO_PASS": "[]",
+    "PASS_TO_PASS": "[]", 
+    "test_cmd": "pytest -v impacket/tests/",
+    "tests_dir": "impacket/tests"
+  }
+]
+
